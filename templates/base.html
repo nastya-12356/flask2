@@ -7,8 +7,8 @@
     <body>
         <h1>Миссия Колонизация Марса</h1>
         <h4>И на Марсе будут яблони цвести!</h4>
-        {% if profession %}
-            {% if "инженер" in proffesion or "строитель" in profession %}
+        {% if proffesion %}
+            {% if "инженер" in proffesion or "строитель" in proffesion %}
                 <h2>Инженерные тренажеры</h2>
                 <img src="{{ url_for('static', filename='images/map_for_it.jpg') }}" >
             {% else %}
@@ -23,13 +23,18 @@
         {% if how %}
             <h2>Список профессий</h2>
             {% if how == 'ol' %}
-                {% for item in prof_list %}
-                    <li>{{ loop.index }} {{ item }}</li>
-                {% endfor %}
+                <ol>
+                    {% for item in prof_list %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ol>
             {% elif how == 'ul' %}
-                {% for item in prof_list %}
-                    <li>{{ loop.index }} {{ item }}</li>
-                {% endfor %}
+                <ul>
+                    {% for item in prof_list %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         {% endif %}
     </body>
 </html>
