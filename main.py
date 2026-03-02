@@ -303,18 +303,26 @@ def carousel():
                       </head>
                       <body>
                         <h1>Пейзажи Марса</h1>
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div id="carouselExample" class="carousel slide">
                           <div class="carousel-inner">
                             <div class="carousel-item active">
-                              <img src="/static/images_for_carusel/landscape1.jpg" class="d-block w-100" alt="landscape1" style="max-width: 500px; height: auto;">
+                              <img src="/static/images_for_carusel/landscape1.jpg" class="d-block w-100" alt="landscape1" style="width: 1000px; height: 680px;">
                             </div>
                             <div class="carousel-item">
-                              <img src="/static/images_for_carusel/landscape2.jpg" class="d-block w-100" alt="landscape1" style="max-width: 500px; height: auto;">
+                              <img src="/static/images_for_carusel/landscape2.jpg" class="d-block w-100" alt="landscape2" style="width: 1000px; height: 680px;">
                             </div>
                             <div class="carousel-item">
-                              <img src="/static/images_for_carusel/landscape3.jpg" class="d-block w-100" alt="landscape1" style="max-width: 500px; height: auto;">
+                              <img src="/static/images_for_carusel/landscape3.jpg" class="d-block w-100" alt="landscape3" style="width: 1000px; height: 680px;">
                             </div>
                           </div>
+                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Предыдущий</span>
+                          </button>
+                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Следующий</span>
+                          </button>
                         </div>
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
                       </body>

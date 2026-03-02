@@ -1,5 +1,6 @@
 h1 {
-   color: #d22e3a
+   color: #d22e3a;
+   text-align: center;
 }
 
 form.login_form {
@@ -10,4 +11,16 @@ form.login_form {
     border: 1px solid gray;
     border-radius: 5px;
     padding: 10px;
+}
+
+.carousel-control-prev {
+    width: 15px;
+    height: 50px;
+    top: 50% !important;
+}
+
+.carousel-control-next {
+    width: 15px;
+    height: 50px;
+    top: 50% !important;
 }
