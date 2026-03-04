@@ -13,7 +13,9 @@ def index(title):
 
 @app.route('/training/<prof>')
 def training(prof):
-    return render_template('base.html', proffesion=prof)
+    param = {}
+    param['profession'] = prof
+    return render_template('index.html', **param)
 
 
 @app.route('/list_prof/<list>')
