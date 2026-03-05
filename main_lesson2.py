@@ -13,6 +13,7 @@ answers = {
     'ready': 'True'
 }
 
+
 @app.route('/<title>')
 @app.route('/index/<title>')
 def index(title):
@@ -39,6 +40,19 @@ def spisok(listing):
 @app.route('/auto_answer')
 def answer():
     return render_template('auto_answer.html', **answers)
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        return render_template('login.html')
+    elif request.method == 'POST':
+        print(request.form['id_astronaut'], '')
+        print(request.form['password_astronaut'], '')
+        print(request.form['id_captain'], '')
+        print(request.form['password_captain'], '')
+
+        return "Доступ разрешен"
 
 
 if __name__ == '__main__':
