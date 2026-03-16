@@ -389,7 +389,7 @@ def table(gender, age):
 
 
 if __name__ == '__main__':
-    db_session.global_init("db/blogs.db")
+    db_session.global_init("db/mars_explorer.db")
     insert_users()
     insert_jobs()
     # app.run(port=8080, host='127.0.0.1')

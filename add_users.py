@@ -44,3 +44,4 @@ def insert_users():
         db_sess = db_session.create_session()
         db_sess.add(user)
         db_sess.commit()
+
