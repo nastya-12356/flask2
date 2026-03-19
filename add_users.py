@@ -1,6 +1,7 @@
 from data.users import User
 from data import db_session
 
+db_session.global_init("db/mars_explorer.db")
 data = [{'name': 'Ridley',
          'age': 21,
          'surname': 'Scott',
@@ -44,4 +45,7 @@ def insert_users():
         db_sess = db_session.create_session()
         db_sess.add(user)
         db_sess.commit()
+
+if __name__ == '__main__':
+    insert_users()
 
