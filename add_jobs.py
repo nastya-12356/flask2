@@ -17,11 +17,6 @@ data = [{'team_leader': 1,
          'work_size': 35,
          'collaborators': '2, 3',
          'is_finished': False,},
-         {'team_leader': 2,
-         'job': 'deployment of residential modules 1 and 2',
-         'work_size': 16,
-         'collaborators': '2, 3',
-         'is_finished': False,},
          {'team_leader': 1,
          'job': 'deployment of residential modules 1 and 2',
          'work_size': 20,
@@ -37,7 +32,7 @@ data = [{'team_leader': 1,
          'job': 'deployment of residential modules 1 and 2',
          'work_size': 14,
          'collaborators': '4, 1',
-         'is_finished': True }
+         'is_finished': False }
         ]
 
 def insert_jobs():
