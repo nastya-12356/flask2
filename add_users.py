@@ -47,9 +47,4 @@ def insert_users():
         db_sess.commit()
 
 if __name__ == '__main__':
-<<<<<<< HEAD
     insert_users()
-=======
-    insert_users()
-
->>>>>>> 2b9564fd3526c252147c904befb90f3a93585e26

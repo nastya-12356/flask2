@@ -1,19 +1,15 @@
 import os
 
-from flask import Flask, url_for, request, render_template
+from flask import Flask, url_for, request, render_template, redirect
 from data import db_session
 from data.users import User
 from data.jobs import Jobs
 from add_users import insert_users
 from add_jobs import insert_jobs
-<<<<<<< HEAD
-db_session.global_init("db/mars_explorer.db")
-db_sess = db_session.create_session()
-=======
+from forms.user import RegisterForm
 
 db_sess = db_session.create_session()
 db_session.global_init("db/mars_explorer.db")
->>>>>>> 2b9564fd3526c252147c904befb90f3a93585e26
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 answers = {
@@ -28,11 +24,38 @@ answers = {
 }
 
 
-@app.route('/promotion')
-def promotion():
-    adds_list = ['Человечество вырастает из детства.', 'Человечеству мала одна планета.',
-                 'Мы сделаем обитаемыми безжизненные пока планеты.', 'И начнем с Марса!', 'Присоединяйся!']
-    return '</br>'.join(adds_list)
+@app.route('/suse')
+def suse():
+    return 'OK'
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def reqister():
+    form = RegisterForm()
+    if form.validate_on_submit():
+        if form.password.data != form.password_again.data:
+            return render_template('register.html', title='Регистрация',
+                                   form=form,
+                                   message="Пароли не совпадают")
+        db_sess = db_session.create_session()
+        if db_sess.query(User).filter(User.email == form.email.data).first():
+            return render_template('register.html', title='Регистрация',
+                                   form=form,
+                                   message="Такой пользователь уже есть")
+        user = User(
+            name=form.name.data,
+            surname=form.name.data,
+            age=form.name.data,
+            position=form.name.data,
+            speciality=form.name.data,
+            address=form.name.data,
+            email=form.email.data,
+        )
+        user.set_password(form.password.data)
+        db_sess.add(user)
+        db_sess.commit()
+        return redirect('/login')
+    return render_template('register.html', title='Регистрация', form=form)
 
 
 @app.route('/image_mars')
@@ -346,11 +369,8 @@ def carousel():
 @app.route('/index')
 def index():
     jobs = db_sess.query(Jobs).all()
-<<<<<<< HEAD
     for job in jobs:
         print(job)
-=======
->>>>>>> 2b9564fd3526c252147c904befb90f3a93585e26
     users = db_sess.query(User).all()
     names = {}
     for user in users:
